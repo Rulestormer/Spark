@@ -1,19 +1,19 @@
 package application.controller
 
-import application.service.impl.UserService
+import application.service.impl.NoteService
 import com.google.gson.Gson
 import spark.Spark.path
 import spark.kotlin.after
 import spark.kotlin.get
 
-class UserController {
-    private val userService = UserService()
+class NoteController {
     private val gson = Gson()
+    private val noteService = NoteService()
 
     fun init(){
-        path("/user") {
-            get("") {
-                gson.toJson(userService.getAllUsers())
+        path("/note") {
+            get("/book") {
+                gson.toJson(noteService.getNotesByBook())
             }
         }
         after {
