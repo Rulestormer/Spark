@@ -1,5 +1,6 @@
-sparkone.iml
-out/
 build/
-.idea
+out/
 .gradle
+.idea
+sparkone.iml
+settings.properties
